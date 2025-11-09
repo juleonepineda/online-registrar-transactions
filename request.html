@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Request</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div id="logo-placeholder">
+                    <img src="images/bpsulogo.png" alt="University Logo">
+            </div>
+            <div class="header-text">
+                <h1>Online School Registrar Transactions</h1>
+                <p>Bataan Peninsula State University - Main Campus</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">System Guide</a>
+        <a href="request.html" class="active">Request Documents</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="#" id="logout-button">Log Out</a>
+    </nav>
+
+    <main>
+        <section id="request-form">
+            <h2>Online Document Request Portal</h2>
+            <p>Follow the two-step process below: first, verify your identity, then select your document and payment method. This completely replaces the need for queuing at the administration building.</p>
+            
+            <h3>Step 1: Student Verification</h3>
+            <form id="verification-form">
+                <label for="student-id">Student ID Number:</label>
+                <input type="text" id="student-id" required placeholder="e.g., 24-05487 (Simulated ID)">
+                
+                <label for="student-email">Registered BPSU Email:</label>
+                <input type="text" id="student-email" required placeholder="e.g., jsmorales24@bpsu.edu.ph (Simulated Email)">
+
+                <button type="submit">Verify Identity</button>
+                <p id="verification-message" class="message"></p>
+            </form>
+
+            <div id="document-options" style="display: none;">
+                <h3 style="margin-top: 40px;">Step 2: Select Document and Payment</h3>
+                <p>Requested documents will be sent to your registered BPSU email upon successful payment and processing.</p>
+                
+                <form id="document-request-form">
+                    <label for="document-type">Document Type:</label>
+                    <select id="document-type" required>
+                        <option value="">-- Select Document --</option>
+                        <option value="Certificate of Registration">Certificate of Registration</option>
+                        <option value="Report of Grades">Report of Grades (Transcript)</option>
+                    </select>
+
+                    <label for="payment-method">Payment Method (Digital Only):</label>
+                    <select id="payment-method" required>
+                        <option value="">-- Select Payment --</option>
+                        <option value="E-Wallet">E-Wallet (G-Cash, PayMaya)</option>
+                    </select>
+
+                    <button type="submit">Submit Request and Proceed to Payment</button>
+                    <p id="request-message" class="message"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BPSU Digital Registrar - Main Campus</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

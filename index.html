@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPSU Student Portal - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="login-overlay">
+        <div id="login-container">
+            <h2>Student Portal Login</h2>
+            <p>Please log in to access your digital registrar services.</p>
+            <form id="login-form">
+                <label for="username">Portal Email:</label>
+                <input type="text" id="username" required placeholder="jedmatibag24@gmail.com"> 
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" required placeholder="03-25-2006"> 
+                
+                <button type="submit">Log In</button>
+                <p id="login-message" class="message"></p>
+            </form>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #777;">Simulated Credentials Example: jsmorales24@bpsu.edu.ph / 08-11-2006</p>
+        </div>
+    </div>
+    
+    <div id="app-content" style="display: none;">
+        <header>
+            <div class="header-content">
+                <div id="logo-placeholder">
+                    <img src="images/bpsulogo.png" alt="University Logo">
+                </div>
+                <div class="header-text">
+                    <h1>Online School Registrar Transactions</h1>
+                    <p>Bataan Peninsula State University - Main Campus</p>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">System Guide</a>
+            <a href="request.html">Request Documents</a>
+            <a href="contacts.html">Contacts</a>
+            <a href="#" id="logout-button">Log Out</a>
+        </nav>
+
+        <main>
+            <section id="portal-overview">
+                <h2>Welcome to Your Digital Student Portal</h2>
+                <p>This platform modernizes your student transactions, allowing you to handle official document requests and payments without visiting the administration building. We aim to eliminate long queues and dramatically reduce processing time.</p>
+                
+                <h3>System Features</h3>
+                <ul>
+                    <li>Remote Request: Submit requests anytime, outside of regular office hours.</li>
+                    <li>Efficient Processing: Secure verification via Student ID and database lookup.</li>
+                    <li>Digital Payment: Integrated options for digital payments (e-wallets, bank transfers).</li>
+                    <li>Fast Delivery: Approved documents are sent directly to your registered BPSU email.</li>
+                </ul>
+                <p>Click on Request Documents above to start a transaction or view the System Guide for the 4-step process.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 BPSU Digital Registrar - Main Campus</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

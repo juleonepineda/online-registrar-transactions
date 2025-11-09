@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ====================================================================== */
+        /* --- ACCORDION CSS STYLES (Updated for rounded, modern look) --- */
+        /* ====================================================================== */
+        .accordion-button {
+            background-color: #00695c; 
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1em;
+            transition: 0.4s;
+            margin-top: 20px; /* Increased margin */
+            border-radius: 8px; /* Rounded button */
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .accordion-button:hover {
+            background-color: #004d40;
+        }
+
+        .panel {
+            padding: 0 20px; /* Adjusted padding */
+            background-color: #ffffff;
+            /* Max height 0 and overflow hidden make the panel collapse by default */
+            max-height: 0; 
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out; /* Smoother transition */
+            border: 1px solid #ddd;
+            border-top: none;
+            border-bottom-left-radius: 8px; /* Rounded bottom corners */
+            border-bottom-right-radius: 8px;
+        }
+        
+        .panel section {
+            /* Override the main section style for the inner panel content */
+            padding: 15px 0; 
+            margin: 0;
+            background-color: transparent;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+        }
+        
+        .panel p {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div id="logo-placeholder">
+                    <img src="images/bpsulogo.png" alt="University Logo">
+            </div>
+            <div class="header-text">
+                <h1>Online School Registrar Transactions</h1>
+                <p>Bataan Peninsula State University - Main Campus</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">System Guide</a>
+        <a href="request.html">Request Documents</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="#" id="logout-button">Log Out</a>
+    </nav>
+
+    <main>
+        <section id="system-guide">
+            <h2>Digital Registrar Service - Step-by-Step Guide</h2>
+            <p>This guide explains the simple process to request and receive official university documents online. This system eliminates the need for physical queuing at the administration building.</p>
+            
+            <h3>The 4-Step Document Request Process</h3>
+
+            <ol>
+                <li><strong>Log In:</strong> Access the portal using your credentials on the Home page.</li>
+                <li><strong>Verify Identity:</strong> On the Request Documents page, enter your <strong>Student ID Number</strong> and <strong>Registered BPSU Email</strong> to authenticate your identity against the centralized database.</li>
+                <li><strong>Submit Request & Pay:</strong> Select the required document (e.g., Report of Grades, Certificate of Registration) and your preferred digital payment method (E-Wallet or Bank Transfer). A payment link will be sent to your email.</li>
+                <li><strong>Receive Document:</strong> Upon successful payment and processing, the approved official document will be sent directly to your **registered BPSU email** address.</li>
+            </ol>
+
+            <h3 style="margin-top: 40px;">System Benefits (Objectives)</h3>
+            <ul>
+                <li>Reduced Waiting Time: Online verification of student records eliminates manual queuing.</li>
+                <li>Enhanced Convenience: Integrated digital payment (e-wallets, bank transfers) provides a cashless option.</li>
+                <li>Improved Accessibility: The system is available 24/7, outside of regular office hours.</li>
+                <li>Fast Delivery: Requested documents are delivered straight to your email.</li>
+                <li>Minimize Onsite Transactions: Saves time and effort for both students and staff.</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">⚠️ Important Considerations (Limitations)</h3>
+            <button class="accordion-button" data-accordion="limitations-panel">Click to View System Limitations and Warnings</button>
+            <div class="panel" id="limitations-panel">
+                <section>
+                    <p>The system is dependent on a stable internet connection; interruptions can cause delays in transactions.</p>
+                    <p>There is a chance of technical issues (downtime, slow loading, program errors) which may frustrate students needing urgent documents.</p>
+                    <p>Not all students have access to digital payment methods or are fully comfortable with using online platforms, which may still require the registrar's assistance.</p>
+                    <p>The storage of student data raises data privacy and security concerns. The university is committed to proper security measures to prevent hacking or data leakage.</p>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Instructor: Mr. Joshua Ahldrin D. Gonzalez</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Logic for the Accordion (Collapse/Expand)
+            const buttons = document.querySelectorAll('.accordion-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const panelId = button.getAttribute('data-accordion');
+                    const panel = document.getElementById(panelId);
+                    
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null; // Collapse the panel
+                    } else {
+                        // Set max height to the scroll height to smoothly expand
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    } 
+                });
+            });
+
+            // The main script.js will handle the logout and navigation highlighting, 
+            // but we add the logout listener here as a fallback/for testing.
+            const logoutButton = document.getElementById('logout-button');
+            function handleLogout(e) {
+                if (e) e.preventDefault();
+                localStorage.removeItem('isLoggedIn'); 
+                window.location.href = 'index.html';
+            }
+            if (logoutButton) {
+                logoutButton.addEventListener('click', handleLogout);
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
